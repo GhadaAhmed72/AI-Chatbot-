@@ -77,6 +77,7 @@ const generateBotResponse = async (botMessageDiv) => {
             typingEffect(responseText, textElement, botMessageDiv);
         }
 
+        // Add bot response to chat history
         chatHistory.push({
             role: "model",
             parts: [{ text: responseText }]
@@ -141,6 +142,7 @@ fileInput.addEventListener("change", () => {
         const base64String = e.target.result.split(",")[1];
         fileUploadWrapper.querySelector(".file-preview").src = e.target.result;
         fileUploadWrapper.classList.add("active", isImage ? "img-attached" : "file-attached");
+        // Store file data in user object
         userData.file = { fileName: file.name, data: base64String, mime_type: file.type, isImage };
     };
 });
