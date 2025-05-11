@@ -107,7 +107,7 @@ const handleFormSubmit =(e)=>{
   scrollToBottom();
   setTimeout(() => {
     const botMessageHtml = `
-        <div class="bot-message">
+        <div class="bot-message" style="margin:15px">
             <img src="gemini-chatbot-logo.svg" alt="" class="avatar">
             <p class="message-text">Just a sec...</p>
         </div>
