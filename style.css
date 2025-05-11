@@ -362,7 +362,7 @@ body.bot-responding .prompt-form #stop-response-btn {
     border-radius: 8px;
     overflow-x: auto;
     margin-top: 10px;
-    max-width: 100%;
+    max-width: 95%;
 }
 
 .chats-container .bot-message pre code {
