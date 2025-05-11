@@ -36,7 +36,7 @@ const typingEffect = (text, textElement, botMessageDiv) => {
             botMessageDiv.classList.remove("loading");
             document.body.classList.remove("bot-responding");
         }
-    }, 50);
+    }, 50); 
 };
 
 const generateBotResponse = async (botMessageDiv) => {
@@ -62,12 +62,12 @@ const generateBotResponse = async (botMessageDiv) => {
 
         let responseText = data.candidates[0].content.parts[0].text.replace(/\*\*([^*]+)\*\*/g, "$1").trim();
 
-        // Detect if the response contains code
+        // Detect if the response contains code 
         const codeBlockRegex = /```([\s\S]*?)```/g;
         let formattedText = responseText;
         if (codeBlockRegex.test(responseText)) {
             formattedText = responseText.replace(codeBlockRegex, (match, code) => {
-                return `<span class="material-symbols-rounded code-icon">code_blocks</span><pre><code>${code.trim()}</code></pre>`;
+                return `<pre><code>${code.trim()}</code></pre>`;
             });
             textElement.innerHTML = "";
             botMessageDiv.classList.remove("loading");
@@ -77,7 +77,6 @@ const generateBotResponse = async (botMessageDiv) => {
             typingEffect(responseText, textElement, botMessageDiv);
         }
 
-        // Add bot response to chat history
         chatHistory.push({
             role: "model",
             parts: [{ text: responseText }]
