@@ -355,3 +355,17 @@ body.bot-responding .prompt-form #stop-response-btn{
     display: block;
 }
 
+.chats-container .bot-message pre {
+    background: var(--secomdary-color);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 10px;
+    max-width: 75%;
+}
+
+.chats-container .bot-message pre code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
